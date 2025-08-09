@@ -1,80 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Browser extensions manager UI</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      font-family: "Noto Sans", sans-serif;
+      background-color: hsl(200, 60%, 99%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .card {
+      background-color: gray;
+      display: flex;
+      margin: 20px
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: hsl(3, 86%, 64%);
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
   </style>
 </head>
+
 <body>
-
-  Extensions List
-
-  All
-  Active
-  Inactive
+  <div class="TopBar">
+    <h1>
+      Extensions List
+    </h1>
+    <div class="filterBtn">
+      <button>
+        All
+      </button>
+      <button>
+        Active
+      </button>
+      <button>
+        Inactive
+      </button>
+    </div>
+  </div>
 
   <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove
-
+  <div class="card">
+    <h2>DevLens</h2>
+    <p>Quickly inspect page layouts and visualize element boundaries.</p>
+    <button>Remove</button>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="card">
+    <h2>StyleSpy</h2>
+    <p>Instantly analyze and copy CSS from any webpage element.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>SpeedBoost</h2>
+    <p>Optimizes browser resource usage to accelerate page loading.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>JSONWizard</h2>
+    <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>TabMaster Pro</h2>
+    <p>Organizes browser tabs into groups and sessions.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>ViewportBuddy</h2>
+    <p>Simulates various screen resolutions directly within the browser.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>Markup Notes</h2>
+    <p>Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>GridGuides</h2>
+    <p>Overlay customizable grids and alignment guides on any webpage.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>Palette Picker</h2>
+    <p>Instantly extracts color palettes from any webpage.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>LinkChecker</h2>
+    <p>Scans and highlights broken links on any page.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>DOM Snapshot</h2>
+    <p>Capture and export DOM structures quickly.</p>
+    <button>Remove</button>
+  </div>
+  <div class="card">
+    <h2>ConsolePlus</h2>
+    <p>Enhanced developer console with advanced filtering and logging.</p>
+    <button>Remove</button>
+  </div>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
 </html>
